@@ -1,0 +1,15 @@
+function largestPrimeFactor(number) {
+  let prime = 2;
+  let maxVal = 1;
+  while( prime <= number){
+    if(number % prime == 0){
+      maxVal = prime;
+      number = number / prime;
+    } else {
+      prime++;
+    }
+  }
+  return maxVal;
+}
+
+largestPrimeFactor(13195);
