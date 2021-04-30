@@ -1,0 +1,17 @@
+function sym(...args){
+  return [...args.reduce(reducer, new Set())]
+}
+
+function reducer(result, arr){
+  const compareSet = new Set(arr);
+  for(let val of compareSet){
+    if(result.has(val)){
+      result.delete(val);
+    }else{
+      result.add(val)
+    }
+  }
+  return result;
+}
+
+sym([1, 2, 3], [5, 2, 1, 4]);
