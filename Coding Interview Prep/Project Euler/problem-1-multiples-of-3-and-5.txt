@@ -1,0 +1,5 @@
+function multiplesOf3and5(number) {
+  return [...Array(number).keys()].filter(num => num % 3 == 0 || num % 5 == 0).reduce((result, num) => result+num, 0);
+}
+
+multiplesOf3and5(1000);
