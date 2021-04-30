@@ -1,0 +1,16 @@
+function largestPalindromeProduct(n) {
+  let max = Math.pow(10,n)-1;
+  let min = Math.pow(10,n-1);
+  let largestPal = 0;
+  for(let num1 = max; num1 >= min; num1--){
+    for(let num2 = max; num2 >= min; num2--){
+      let res = num1 * num2;
+      if (res.toString() === res.toString().split("").reverse().join("") && res > largestPal){
+        largestPal = res;
+       }
+    }
+  }
+  return largestPal;
+}
+
+largestPalindromeProduct(3);
