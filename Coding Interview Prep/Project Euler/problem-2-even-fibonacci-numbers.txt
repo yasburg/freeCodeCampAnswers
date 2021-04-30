@@ -1,0 +1,15 @@
+function fiboEvenSum(n) {
+
+  let newNum = 1;
+  let arr = [1]
+  let curIndex = 0;
+  let prevIndex = 0;
+  while(true) {
+    newNum = arr[curIndex]+arr[prevIndex]
+    if(newNum > n) break;
+    arr.push(newNum);
+    prevIndex = curIndex;
+    curIndex++;
+  }
+  return arr.filter(num => num % 2 == 0).reduce((acc,item) => acc+item, 0);
+}
