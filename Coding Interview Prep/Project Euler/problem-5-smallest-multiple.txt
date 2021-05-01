@@ -1,0 +1,19 @@
+function lcm(a, b) {
+  return (a * b) / gcd(a, b);
+}
+
+function gcd(a, b) {
+  return a == 0 ? b : gcd(b % a, a);
+}
+
+function smallestMult(n) {
+  let maxLcm = 1;
+
+  for(let i = 2; i <= n; i++){
+    maxLcm = lcm(maxLcm, i);
+  }
+  console.log(maxLcm)
+  return maxLcm;
+}
+
+smallestMult(20);
