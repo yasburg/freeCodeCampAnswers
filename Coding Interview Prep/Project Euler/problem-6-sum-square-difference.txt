@@ -1,0 +1,19 @@
+function sumOfSquares(n){
+  let sum = 0;
+
+  for(let i = 1; i <= n; i++){
+    sum += i * i;
+  }
+  return sum;
+}
+
+function squareOfSums(n){
+  let sum = (n * (n+1)) / 2;
+  return sum * sum;
+}
+
+function sumSquareDifference(n) {
+  return squareOfSums(n)-sumOfSquares(n);
+}
+
+sumSquareDifference(100);
