@@ -1,0 +1,19 @@
+function primeSummation(num){
+
+  let primeArr = Array(num).fill(true);
+  primeArr[0] = false;
+  primeArr[1] = false;
+
+  for (let i = 2; i < Math.sqrt(num); i++){
+    if (primeArr[i]){
+      //if i is nor a prime the multiples of i can't be so we mark them
+      //on the array 
+      for (let j = i * i; j < num; j += i)
+        primeArr[j] = false;
+    }
+  }
+
+  return primeArr.reduce(
+    (sum, prime, index) => prime ? sum + index : sum, 0
+  );
+}
