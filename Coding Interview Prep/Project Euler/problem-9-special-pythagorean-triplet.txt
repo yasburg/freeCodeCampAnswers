@@ -1,0 +1,14 @@
+function specialPythagoreanTriplet(n) {
+ let sumOfabc = n;
+  for(let a = 1; a < n; a++){
+    for(let b = a; b < n; b++){
+      for(let c = b; c < n; c++){
+        if((a+b+c == sumOfabc) && ((a*a)+(b*b) == (c*c))){
+          return a*b*c;
+        }
+      }
+    }
+  }
+}
+
+specialPythagoreanTriplet(24);
